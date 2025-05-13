@@ -35,5 +35,5 @@ jobs:
 
       #Step 5: Build React app
       - name: Build React app
-        run: npm run build:skip-ts
+        run: npm run build
 
