@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "build:skip-ts": "vite build"
   },
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
