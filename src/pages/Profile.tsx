@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { updateProfile, deleteUser } from 'firebase/auth';
-import styles from '../styles/auth-styles';
+import '../styles/auth-styles.css';
 
 const Profile: React.FC = () => {
   const { user } = useAuth();
@@ -43,34 +43,27 @@ const Profile: React.FC = () => {
   };
 
   return (
-    <div style={styles.form}>
+    <div className='form-container'>
       <h1>Profile</h1>
       <form onSubmit={handleUpdateProfile}>
         <input
-          style={styles.input}
           type='text'
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
           placeholder='Name'
         />
         <input
-          style={styles.input}
           disabled={true}
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder='Email'
         />
-        <button style={styles.button} type='submit'>
-          Update Profile
-        </button>
-        {success && <p style={styles.success}>{success}</p>}
-        {error && <p style={styles.error}>{error}</p>}
+        <button type='submit'>Update Profile</button>
+        {success && <p className='success'>{success}</p>}
+        {error && <p className='error'>{error}</p>}
         <div>
-          <button
-            onClick={handleDeleteAccount}
-            style={styles.deleteAccountButton}
-          >
+          <button onClick={handleDeleteAccount} className='deleteAccountButton'>
             Delete Account
           </button>
         </div>
