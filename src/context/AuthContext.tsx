@@ -9,6 +9,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setUser: (user:User) => {}
 })
 
